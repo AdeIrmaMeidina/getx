@@ -18,15 +18,23 @@ class HomeView extends GetView<HomeController> {
         children: [
           const Center(
             child: Text(
-              'HomeView is working',
+              'Select which one',
               style: TextStyle(fontSize: 20),
             ),
           ),
+          const SizedBox(height: 20),
           ElevatedButton(
             onPressed:() {
               Get.toNamed('/counter');
             },
-            child: Text('Pindah ke Counter Page'))
+            child: Text('go to counter page')),
+
+            const SizedBox(height: 20),
+            ElevatedButton(
+            onPressed:() {
+              Get.toNamed('/formulir');
+            },
+            child: Text('go to formulir page'))
         ],
       ),
     );

@@ -21,12 +21,14 @@ class CounterView extends GetView<CounterController> {
               Obx(
                 () => Text('di klik : ${c.bilangan}'),
               ),
+              const SizedBox(height: 20),
               ElevatedButton(
                   onPressed: () {
                     c.tambahSatu();
                   },
                   child: Icon(Icons.add)),
 
+                  const SizedBox(height: 20),
                   ElevatedButton(
                   onPressed: () {
                     c.kurangSatu();
