@@ -1,13 +1,13 @@
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/kategori_controller.dart';
 
 class KategoriView extends GetView<KategoriController> {
   KategoriView({Key? key}) : super(key: key);
-
+  final KategoriController controller = Get.put(KategoriController());
   @override
   Widget build(BuildContext context) {
-    final KategoriController controller = Get.put(KategoriController());
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -32,9 +32,9 @@ class KategoriView extends GetView<KategoriController> {
         }
         return ListView.builder(
           padding: const EdgeInsets.all(8.0),
-          itemCount: controller.kategorilist.length,
+          itemCount: controller.kategoriList.length,
           itemBuilder: (context, index) {
-            final item = controller.kategorilist[index];
+            final item = controller.kategoriList[index];
             return Card(
               margin: EdgeInsets.symmetric(vertical: 10),
               shape: RoundedRectangleBorder(

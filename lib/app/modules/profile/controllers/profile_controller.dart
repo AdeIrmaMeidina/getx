@@ -1,5 +1,6 @@
-import 'package:get/get.dart';
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -25,7 +26,7 @@ class ProfileController extends GetxController {
   Future<void> fetchUserProfile() async {
     isLoading(true);
     final token = box.read('access_token');
-    final url = Uri.parse('${BaseUrl.api}/profile');
+    final url = Uri.parse('${BaseUrl.api}/user/profile');
     final response = await http.get(
       url,
       headers: {'Authorization': 'Bearer $token'},
@@ -33,10 +34,10 @@ class ProfileController extends GetxController {
 
     if (response.statusCode == 200) {
       userProfile.value = json.decode(response.body);
-  } else {
-    Get.snackbar('Error', 'Failed to load profile',
-        snackPosition: SnackPosition.BOTTOM);
+    } else {
+      Get.snackbar('Error', 'Failed to load profile',
+          snackPosition: SnackPosition.BOTTOM);
+    }
+    isLoading(false);
   }
-  isLoading(false);
- }
 }
