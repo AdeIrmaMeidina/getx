@@ -1,3 +1,3 @@
 class BaseUrl {
-  static String api = "https://movieapi.smkassalaambandung.sch.id/api/";
+  static String api = "https://movieapi.smkassalaambandung.sch.id/api";
 }
