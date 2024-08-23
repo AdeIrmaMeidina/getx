@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../data/kategori_model.dart';
+import 'package:myapp/app/data/kategori_model.dart';
 import '../controllers/kategori_controller.dart';
 
 class CreateKategoriView extends StatelessWidget {
@@ -55,11 +55,12 @@ class CreateKategoriView extends StatelessWidget {
             Center(
               child: ElevatedButton(
                 onPressed: () {
-                  final newCategory = DataKategori(
+                  final newKategori = DataKategori(
                     namaKategori: namaKategoriController.text,
                     slug: slugController.text,
                   );
-                  controller.addKategori(newCategory);
+                  controller.addKategori
+                  (newKategori);
                   Get.back();
                 },
                 style: ElevatedButton.styleFrom(

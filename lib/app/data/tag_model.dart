@@ -1,18 +1,17 @@
-
-class Kategori {
+class Tag {
   bool? success;
   String? message;
-  List<DataKategori>? data;
+  List<DataTag>? data;
 
-  Kategori({this.success, this.message, this.data});
+  Tag({this.success, this.message, this.data});
 
-  Kategori.fromJson(Map<String, dynamic> json) {
+  Tag.fromJson(Map<String, dynamic> json) {
     success = json['success'];
     message = json['message'];
     if (json['data'] != null) {
-      data = <DataKategori>[];
+      data = <DataTag>[];
       json['data'].forEach((v) {
-        data!.add(new DataKategori.fromJson(v));
+        data!.add(new DataTag.fromJson(v));
       });
     }
   }
@@ -28,27 +27,29 @@ class Kategori {
   }
 }
 
-class DataKategori {
+class DataTag {
   int? id;
-  String? namaKategori;
+  String? namaTag;
   String? slug;
   String? createdAt;
   String? updatedAt;
 
-  DataKategori({this.id, this.namaKategori, this.slug, this.createdAt, this.updatedAt});
+  DataTag({this.id, this.namaTag, this.slug, this.createdAt, this.updatedAt});
 
-  DataKategori.fromJson(Map<String, dynamic> json) {
+  DataTag.fromJson(Map<String, dynamic> json) {
     id = json['id'];
-    namaKategori = json['nama_kategori'];
+    namaTag = json['nama_tag'];
     slug = json['slug'];
     createdAt = json['created_at'];
     updatedAt = json['updated_at'];
   }
 
+  get namaKategori => null;
+
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['id'] = this.id;
-    data['nama_kategori'] = this.namaKategori;
+    data['nama_tag'] = this.namaTag;
     data['slug'] = this.slug;
     data['created_at'] = this.createdAt;
     data['updated_at'] = this.updatedAt;
