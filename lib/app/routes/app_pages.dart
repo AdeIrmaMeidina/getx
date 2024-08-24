@@ -1,10 +1,16 @@
 import 'package:get/get.dart';
+import 'package:myapp/app/modules/berita/bindings/berita_binding.dart';
+import 'package:myapp/app/modules/berita/views/berita_view.dart';
+import 'package:myapp/app/modules/berita/views/create_berita_view.dart';
+import 'package:myapp/app/modules/berita/views/edit_berita_view.dart';
+import 'package:myapp/app/modules/berita/views/show_berita_view.dart';
 import 'package:myapp/app/modules/tag/views/create_tag_view.dart';
 import 'package:myapp/app/modules/tag/views/edit_tag_view.dart';
 import 'package:myapp/app/modules/tag/views/show_tag_view.dart';
 import 'package:myapp/app/modules/user/views/create_user_view.dart';
 import 'package:myapp/app/modules/user/views/edit_user_view.dart';
 import 'package:myapp/app/modules/user/views/show_user_view.dart';
+import 'package:myapp/app/routes/app_routes.dart';
 
 import '../middlewares/auth_middleware.dart';
 import '../modules/biodata/bindings/biodata_binding.dart';
@@ -31,7 +37,7 @@ import '../modules/tag/views/tag_view.dart';
 import '../modules/user/bindings/user_binding.dart';
 import '../modules/user/views/user_view.dart';
 
-part 'app_routes.dart';
+
 
 class AppPages {
   AppPages._();
@@ -40,47 +46,47 @@ class AppPages {
 
   static final routes = [
     GetPage(
-      name: _Paths.HOME,
+      name: Routes.HOME,
       page: () => const HomeView(),
       binding: HomeBinding(),
       middlewares: [AuthMiddleware()],
     ),
     GetPage(
-      name: _Paths.COUNTER,
+      name: Routes.COUNTER,
       page: () => const CounterView(),
       binding: CounterBinding(),
       middlewares: [AuthMiddleware()],
     ),
     GetPage(
-      name: _Paths.BIODATA,
+      name: Routes.BIODATA,
       page: () => const BiodataView(),
       binding: BiodataBinding(),
       middlewares: [AuthMiddleware()],
     ),
     GetPage(
-      name: _Paths.REGISTER,
+      name: Routes.REGISTER,
       page: () => RegisterView(),
       binding: RegisterBinding(),
     ),
     GetPage(
-      name: _Paths.LOGIN,
+      name: Routes.LOGIN,
       page: () => LoginView(),
       binding: LoginBinding(),
     ),
     GetPage(
-      name: _Paths.PROFILE,
+      name: Routes.PROFILE,
       page: () => ProfileView(),
       binding: ProfileBinding(),
       middlewares: [AuthMiddleware()],
     ),
     GetPage(
-      name: _Paths.BOTTOM_MENU,
+      name: Routes.BOTTOM_MENU,
       page: () => BottomMenuView(),
       binding: BottomMenuBinding(),
       middlewares: [AuthMiddleware()],
     ),
     GetPage(
-      name: _Paths.KATEGORI,
+      name: Routes.KATEGORI,
       page: () => KategoriView(),
       binding: KategoriBinding(),
       middlewares: [AuthMiddleware()],
@@ -103,7 +109,7 @@ class AppPages {
       middlewares: [AuthMiddleware()],
     ),
     GetPage(
-      name: _Paths.TAG,
+      name: Routes.TAG,
       page: () => TagView(),
       binding: TagBinding(),
       middlewares: [AuthMiddleware()],
@@ -127,7 +133,7 @@ class AppPages {
       middlewares: [AuthMiddleware()],
     ),
     GetPage(
-      name: _Paths.USER,
+      name: Routes.USER,
       page: () => UserView(),
       binding: UserBinding(),
       middlewares: [AuthMiddleware()],
@@ -148,6 +154,30 @@ class AppPages {
       name: Routes.SHOW_USER,
       page: () => ShowUserView(),
       binding: UserBinding(),
+      middlewares: [AuthMiddleware()],
+    ),
+    GetPage(
+      name: Routes.BERITA,
+      page: () => BeritaView(),
+      binding: BeritaBinding(),
+      middlewares: [AuthMiddleware()],
+    ),
+    GetPage(
+      name: Routes.CREATE_BERITA,
+      page: () => CreateBeritaView(),
+      binding: BeritaBinding(),
+      middlewares: [AuthMiddleware()],
+    ),
+    GetPage(
+      name: Routes.EDIT_BERITA,
+      page: () => EditBeritaView(),
+      binding: BeritaBinding(),
+      middlewares: [AuthMiddleware()],
+    ),
+    GetPage(
+      name: Routes.SHOW_BERITA,
+      page: () => ShowBeritaView(),
+      binding: BeritaBinding(),
       middlewares: [AuthMiddleware()],
     ),
   ];

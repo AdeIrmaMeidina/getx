@@ -8,6 +8,7 @@ import '../../../utils/api.dart';
 
 class KategoriController extends GetxController {
   var kategoriList = <DataKategori>[].obs;
+  var selectedKategori = Rxn<int>();
   var isLoading = true.obs;
 
   final String baseUrl = '${BaseUrl.api}/kategori';

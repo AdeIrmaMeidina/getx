@@ -24,6 +24,7 @@ class User {
       data['data'] = this.data!.map((v) => v.toJson()).toList();
     }
     return data;
+    
   }
 }
 
@@ -31,8 +32,8 @@ class DataUser {
   int? id;
   String? name;
   String? email;
+  Null? emailVerifiedAt;
   String? password;
-  Null emailVerifiedAt;
   String? createdAt;
   String? updatedAt;
 
@@ -40,34 +41,30 @@ class DataUser {
       {this.id,
       this.name,
       this.email,
-      this.password,
       this.emailVerifiedAt,
+      this.password,
       this.createdAt,
-      this.updatedAt, required String namaUser, required emailUser, required passwordUser});
+      this.updatedAt});
 
   DataUser.fromJson(Map<String, dynamic> json) {
     id = json['id'];
-    name = json['name'];
-    email = json['email'];
-    password = json['password'];
+    name = json['name'];  // Default to an empty string if null
+    email = json['email'];  // Default to an empty string if null
     emailVerifiedAt = json['email_verified_at'];
+    password = json['password'];
     createdAt = json['created_at'];
     updatedAt = json['updated_at'];
   }
 
   get namaUser => null;
 
-  get emailUser => null;
-
-  get passwordUser => null;
-
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['id'] = this.id;
     data['name'] = this.name;
     data['email'] = this.email;
-    data['password'] = this.password;
     data['email_verified_at'] = this.emailVerifiedAt;
+    data['password'] = this.password;
     data['created_at'] = this.createdAt;
     data['updated_at'] = this.updatedAt;
     return data;

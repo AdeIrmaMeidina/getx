@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:myapp/app/data/tag_model.dart';
 import 'package:myapp/app/data/user_model.dart';
-import '../../../data/tag_model.dart';
 import '../controllers/user_controller.dart';
 
 class CreateUserView extends StatelessWidget {

@@ -1,8 +1,7 @@
-part of 'app_pages.dart';
+// part of 'app_pages.dart';
 // DO NOT EDIT. This is code generated via package:get_cli/get_cli.dart
 
 abstract class Routes {
-  Routes._();
   static const HOME = _Paths.HOME;
   static const COUNTER = _Paths.COUNTER;
   static const BIODATA = _Paths.BIODATA;
@@ -22,6 +21,12 @@ abstract class Routes {
   static const CREATE_USER = _Paths.CREATE_USER;
   static const EDIT_USER = _Paths.EDIT_USER;
   static const SHOW_USER = _Paths.SHOW_USER;
+  static const BERITA = _Paths.BERITA;
+  static const CREATE_BERITA = _Paths.CREATE_BERITA;
+  static const EDIT_BERITA = _Paths.EDIT_BERITA;
+  static const SHOW_BERITA = _Paths.SHOW_BERITA;
+
+  Routes._();
 }
 
 abstract class _Paths {
@@ -45,4 +50,8 @@ abstract class _Paths {
   static const CREATE_USER = '/user/create';
   static const EDIT_USER = '/user/edit';
   static const SHOW_USER = '/user/show';
+  static const BERITA = '/berita';
+  static const CREATE_BERITA = '/berita/create';
+  static const EDIT_BERITA = '/berita/edit';
+  static const SHOW_BERITA = '/berita/show';
 }

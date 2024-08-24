@@ -6,8 +6,10 @@ import 'dart:convert';
 
 import '../../../utils/api.dart';
 
+
 class UserController extends GetxController {
   var userList = <DataUser>[].obs;
+  var selectedUser = Rxn<int>();
   var isLoading = true.obs;
 
   final String baseUrl = '${BaseUrl.api}/user';
